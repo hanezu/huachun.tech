@@ -1,3 +1,5 @@
+// Edited from https://github.com/tangly1024/NotionNext/blob/main/pages/index.js
+
 import BLOG from '@/blog.config'
 import { siteConfig } from '@/lib/config'
 import { getGlobalData, getPostBlocks } from '@/lib/db/getSiteData'

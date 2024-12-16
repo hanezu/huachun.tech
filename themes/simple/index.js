@@ -378,5 +378,6 @@ export {
   LayoutSearch,
   LayoutSlug,
   LayoutTagIndex,
+  LayoutArticle,
   CONFIG as THEME_CONFIG
 }

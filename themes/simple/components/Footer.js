@@ -16,10 +16,10 @@ export default function Footer(props) {
     parseInt(since) < currentYear ? since + '-' + currentYear : currentYear
 
   return (
-    <footer className='relative w-full bg-black px-6 border-t'>
+    <footer className='relative w-full dark:bg-black px-6 border-t'>
       <DarkModeButton className='text-center pt-4' />
 
-      <div className='text-yellow-300 container mx-auto max-w-4xl py-6 md:flex flex-wrap md:flex-no-wrap md:justify-between items-center text-sm'>
+      <div className='dark:text-yellow-300 container mx-auto max-w-4xl py-6 md:flex flex-wrap md:flex-no-wrap md:justify-between items-center text-sm'>
         <div className='text-center'>
           &copy;{`${copyrightDate}`} {siteConfig('AUTHOR')}. All rights
           reserved.
@@ -35,14 +35,6 @@ export default function Footer(props) {
             </a>
           )}
           <BeiAnGongAn />
-          <span className='no-underline ml-4'>
-            Powered by
-            <a
-              href='https://github.com/tangly1024/NotionNext'
-              className=' hover:underline'>
-              NotionNext {siteConfig('VERSION')}
-            </a>
-          </span>
         </div>
       </div>
     </footer>

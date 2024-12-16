@@ -9,15 +9,6 @@ const SocialButton = () => {
   return (
     <div className='w-58 justify-center flex-wrap flex my-2'>
       <div className='space-x-5 md:text-xl text-3xl text-gray-600 dark:text-gray-400 text-center'>
-        {siteConfig('CONTACT_GITHUB') && (
-          <a
-            target='_blank'
-            rel='noreferrer'
-            title={'github'}
-            href={siteConfig('CONTACT_GITHUB')}>
-            <i className='fab fa-github transform hover:scale-125 duration-150' />
-          </a>
-        )}
         {siteConfig('CONTACT_TWITTER') && (
           <a
             target='_blank'
@@ -72,15 +63,6 @@ const SocialButton = () => {
             <i className='fas fa-envelope transform hover:scale-125 duration-150' />
           </a>
         )}
-        {JSON.parse(siteConfig('ENABLE_RSS')) && (
-          <a
-            target='_blank'
-            rel='noreferrer'
-            title={'RSS'}
-            href={'/rss/feed.xml'}>
-            <i className='fas fa-rss transform hover:scale-125 duration-150' />
-          </a>
-        )}
         {siteConfig('CONTACT_BILIBILI') && (
           <a
             target='_blank'
@@ -106,6 +88,24 @@ const SocialButton = () => {
             title={'google scholar'}
             href={siteConfig('CONTACT_GOOGLE_SCOLAR')}>
             <i className='fas fa-graduation-cap transform hover:scale-125 duration-150' />
+          </a>
+        )}
+        {siteConfig('CONTACT_GITHUB') && (
+          <a
+            target='_blank'
+            rel='noreferrer'
+            title={'github'}
+            href={siteConfig('CONTACT_GITHUB')}>
+            <i className='fab fa-github transform hover:scale-125 duration-150' />
+          </a>
+        )}
+        {JSON.parse(siteConfig('ENABLE_RSS')) && (
+          <a
+            target='_blank'
+            rel='noreferrer'
+            title={'RSS'}
+            href={'/rss/feed.xml'}>
+            <i className='fas fa-rss transform hover:scale-125 duration-150' />
           </a>
         )}
       </div>
