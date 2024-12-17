@@ -687,7 +687,7 @@ svg.notion-page-icon {
 }
 
 .notion-list li {
-  padding: 1px 0;
+  padding: 0 !important;
   white-space: pre-wrap;
 }
 
@@ -1673,10 +1673,15 @@ code[class*='language-'] {
 .notion-text,
 .notion-quote,
 .notion-h-title {
-  @apply leading-8;
+  line-height: 1.6;
   @apply p-0;
   @apply my-3;
 }
+
+.notion-external-block {
+  margin: 12px 0 !important;
+}
+
 .notion-page-link {
   color: inherit;
 }
@@ -2049,7 +2054,7 @@ code.language-mermaid {
 }
 
 .notion-external-image {
-  @apply w-6 h-6 mx-3 my-2 !important;
+  @apply w-6 h-6 mx-1 mb-1 !important;
 }
 
 /* 表格 #f5f6f8*/

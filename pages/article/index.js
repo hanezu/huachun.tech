@@ -1,4 +1,5 @@
-// Edited from https://github.com/tangly1024/NotionNext/blob/main/pages/index.js
+// - Hanezu: This file should be maintain the same as latest pages/index.js
+// https://github.com/tangly1024/NotionNext/blob/main/pages/index.js
 
 import BLOG from '@/blog.config'
 import { siteConfig } from '@/lib/config'
@@ -7,7 +8,6 @@ import { generateRobotsTxt } from '@/lib/robots.txt'
 import { generateRss } from '@/lib/rss'
 import { generateSitemapXml } from '@/lib/sitemap.xml'
 import { DynamicLayout } from '@/themes/theme'
-import { getPost } from '@/lib/notion/getNotionPost'
 
 /**
  * 首页布局
@@ -16,7 +16,7 @@ import { getPost } from '@/lib/notion/getNotionPost'
  */
 const Index = props => {
   const theme = siteConfig('THEME', BLOG.THEME, props.NOTION_CONFIG)
-  return <DynamicLayout theme={theme} layoutName='LayoutIndex' {...props} />
+  return <DynamicLayout theme={theme} layoutName='LayoutArticle' {...props} />
 }
 
 /**
@@ -27,14 +27,6 @@ export async function getStaticProps(req) {
   const { locale } = req
   const from = 'index'
   const props = await getGlobalData({ from, locale })
-
-  // - Load Index Page from Notion (by Hanezu)
-  // Show index page
-  const indexPost = props.allPages.find(page => page.slug === 'index')
-  // neeed to remove all '-' in the id
-  console.log('indexPost', indexPost)
-  props.post = await getPost(indexPost.id.replace(/-/g, ''))
-
   const POST_PREVIEW_LINES = siteConfig(
     'POST_PREVIEW_LINES',
     12,
